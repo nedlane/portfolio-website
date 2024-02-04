@@ -105,7 +105,15 @@ function validateBody(input) {
   if (
     input.data.name.length < 3 ||
     input.data.email.length < 5 ||
-    input.data.message < 10
+    input.data.message.length < 10
+  ) {
+    return false;
+  }
+
+  if (
+    input.data.name.length > 100 ||
+    input.data.email.length > 200 ||
+    input.data.message.length > 1500
   ) {
     return false;
   }
