@@ -1,5 +1,5 @@
 const userData = {
-  githubUsername: "nedisthebest",
+  githubUsername: "nedlane",
   name: "Ned Lane",
   designation: "Student",
   avatarUrl: "/avatar.jpg",
@@ -32,7 +32,7 @@ const userData = {
   socialLinks: {
     instagram: "https://instagram.com/nedlane.06",
     linkedin: "https://linkedin.com/",
-    github: "https://github.com/nedisthebest",
+    github: "https://github.com/nedlane",
     facebook: "https://facebook.com/nedlane.06",
   },
 };
