@@ -16,16 +16,17 @@ export default function Navbar() {
   return (
     <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
       <div className="flex  md:flex-row justify-between items-center">
-        <div className="flex flex-col">
-          <Link href="/">
+        <Link href="/" className="flex flex-row">
+          <img src="/logo_optim.svg" className="h-20 hidden md:block" />
+          <div className="flex flex-col justify-center">
             <h1 className="font-semibold text-xl dark:text-gray-100">
               {userData.name}
             </h1>
             <p className="text-base font-light text-gray-500 dark:text-gray-300">
               {userData.designation}
             </p>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
         <div className="space-x-8 hidden md:block">
           <Link
