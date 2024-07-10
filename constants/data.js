@@ -15,7 +15,7 @@ const userData = {
   about: {
     title:
       "I'm a uni student that loves building web applications and useful tools to help myself and other students",
-    description: [`lorem`, `ipsum`, `dolor sit amet`],
+    description: [],
     currentProject: "autonomous racecars 🏎️",
     currentProjectUrl: "https://uqracing.com",
   },
