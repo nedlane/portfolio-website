@@ -21,7 +21,6 @@ export default async (req, res) => {
 
 async function discordMessage(data) {
   const webhookURL = process?.env?.DISCORD_WEBHOOK_URL;
-  const contents = `@everyone Recieved website request from ${data.name}: [${data.email}](mailto:${data.email}), \n \n Message: ${data.message}`;
   const sendobject = {
     method: "post",
     headers: {

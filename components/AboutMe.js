@@ -17,7 +17,7 @@ export default function AboutMe() {
           >
             {userData.about.title}. Currently working on{" "}
             <a
-              className="bg-red-500 rounded-md px-2 py-1 text-white"
+              className="bg-purple-500 rounded-md px-2 py-1 text-white"
               href={userData.about.currentProjectUrl}
             >
               {userData.about.currentProject}
@@ -63,7 +63,7 @@ export default function AboutMe() {
                   target="__blank"
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
                 >
-                  CV
+                  resume
                 </a>{" "}
                 and I'd love to work for you. Please reach out!
               </p>
@@ -134,7 +134,7 @@ export default function AboutMe() {
               </p>
             ))}
 
-            <h1 className="bg-red-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
+            <h1 className="bg-purple-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
               Tech Stack
             </h1>
             <div className="flex flex-row flex-wrap mt-8">
@@ -163,7 +163,7 @@ export default function AboutMe() {
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"
+                src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
@@ -175,11 +175,11 @@ export default function AboutMe() {
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png"
+                src="https://user-images.githubusercontent.com/25181517/192106073-90fffafe-3562-4ff9-a37e-c77a2da0ff58.png"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png"
+                src="https://github.com/marwin1991/profile-technology-icons/assets/136815194/5f8c622c-c217-4649-b0a9-7e0ee24bd704"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img

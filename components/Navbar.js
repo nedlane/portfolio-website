@@ -54,17 +54,16 @@ export default function Navbar() {
               </svg>
             )}
           </Link>
-          {/*}
           <Link
-            href="/projects"
+            href="https://tutoring.nedlane.com/"
             className={`text-base  ${
               router.asPath === "/projects"
                 ? "text-gray-800 font-bold dark:text-gray-400"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
-            Projects
-            {router.asPath === "/projects" && (
+            Tutoring
+            {router.asPath === "noakjh/" && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -80,7 +79,7 @@ export default function Navbar() {
               </svg>
             )}
           </Link>
-    {*/}
+
           <Link
             href="/experience"
             className={`text-base  ${

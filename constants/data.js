@@ -10,14 +10,14 @@ const userData = {
     { word: "Developer", color: "#9D32A8" },
     { word: "Hobbyist", color: "#FF8E0D" },
     { word: "Student", color: "#009105" },
-    { word: "Random", color: "#049EBD" },
+    { word: "Musician", color: "#049EBD" },
   ],
   about: {
     title:
       "I'm a uni student that loves building web applications and useful tools to help myself and other students",
     description: [`lorem`, `ipsum`, `dolor sit amet`],
-    currentProject: "custom email solutions ✉️",
-    currentProjectUrl: "mailto:ned@nedlane.com",
+    currentProject: "autonomous racecars 🏎️",
+    currentProjectUrl: "https://uqracing.com",
   },
   experience: [
     {
@@ -27,8 +27,15 @@ const userData = {
       companyLink: "https://www.terrace.qld.edu.au/",
       desc: "Graduated with an ATAR of 98.10",
     },
+    {
+      title: "Bachelor / Masters of Engineering (Honours)",
+      company: "The University of Queensland",
+      year: "2024",
+      companyLink: "https://www.uq.edu.au/",
+      desc: "Currently studying a degree specialising in Software Engineering",
+    },
   ],
-  resumeUrl: "https://drive.google.com/",
+  resumeUrl: "https://nedlane.com/resume.pdf",
   socialLinks: {
     instagram: "https://instagram.com/nedlane.06",
     linkedin: "https://linkedin.com/",
