@@ -38,7 +38,7 @@ const userData = {
   resumeUrl: "https://nedlane.com/resume.pdf",
   socialLinks: {
     instagram: "https://instagram.com/nedlane.06",
-    linkedin: "https://linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/nedlane/",
     github: "https://github.com/nedlane",
     facebook: "https://facebook.com/nedlane.06",
   },
