@@ -6,6 +6,7 @@ const userData = {
   email: "ned@nedlane.com",
   phone: "+61 473 005 455",
   address: "Brisbane, Queensland, Australia",
+  siteUrl: "https://nedlane.com",
   hero: [
     { word: "Developer", color: "#9D32A8" },
     { word: "Hobbyist", color: "#FF8E0D" },
