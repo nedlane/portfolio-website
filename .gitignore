@@ -35,3 +35,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Private career research and application drafts
+/career/

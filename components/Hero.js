@@ -1,46 +1,24 @@
 import React from "react";
-import { RoughNotationGroup } from "react-rough-notation";
-import { RainbowHighlight } from "./RainbowHighlight";
+import Link from "next/link";
 import userData from "@constants/data";
 
 export default function Hero() {
   return (
-    <div className="flex flex-row justify-center items-start overflow-hidden">
-      <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20">
-        <RoughNotationGroup show={true}>
-          {userData.hero.map((field, idx) => (
-            <RainbowHighlight key={idx} color={field.color}>
-              <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-                {field.word}
-              </h1>
-            </RainbowHighlight>
-          ))}
-        </RoughNotationGroup>
-      </div>
-      {/* Image container */}
-      <div className="hidden lg:block relative w-full md:w-1/2 -mr-20 mt-20">
-        <div className="w-3/4 ">
-          <img src={userData.avatarUrl} alt="avatar" className=" shadow" />
-          <div className="flex flex-row justify-between mt-4">
-            <div className="flex flex-row space-x-4 ml-20">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-90deg-up"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"
-                />
-              </svg>
-              <p className="font-mono">Playing music</p>
-            </div>
-          </div>
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p className="text-purple-700 dark:text-purple-300 font-semibold mb-4">Brisbane · Engineering at UQ</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 leading-tight">I build software for vehicles and the people working on them.</h1>
+        <p className="text-xl text-gray-700 dark:text-gray-300 mt-6 leading-relaxed">I’m Ned. I work on autonomous vehicle software, developer tools and the networks that support UQ Racing.</p>
+        <p className="text-base text-gray-600 dark:text-gray-300 mt-4">Looking for ongoing part-time robotics or software engineering work. Two days a week during semester, up to three by arrangement. Available with two weeks’ notice.</p>
+        <div className="flex flex-wrap gap-4 mt-8">
+          <a href={userData.resumeUrl} className="bg-purple-700 text-white px-5 py-3 rounded-md font-semibold">Download résumé</a>
+          <Link href="/about" className="border border-gray-500 px-5 py-3 rounded-md font-semibold">About my work</Link>
         </div>
       </div>
-    </div>
+      <figure className="max-w-lg">
+        <img src={userData.avatarUrl} alt="Ned Lane playing music" className="rounded-lg w-full" />
+        <figcaption className="text-sm text-gray-600 dark:text-gray-300 mt-3">Outside engineering, I play music.</figcaption>
+      </figure>
+    </section>
   );
 }

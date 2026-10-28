@@ -8,9 +8,9 @@ import userData from "@constants/data";
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
   const meta = {
-    title: `Ned Lane - ${userData.hero.map((word) => word.word).join(", ")}`,
-    description: `I've been coding in various for years. Get in touch with me to know more.`,
-    image: "/avatar.png",
+    title: `Ned Lane | ${userData.designation}`,
+    description: `Brisbane software engineering student at UQ. Explore my developer tools, web applications and work on autonomous racecars.`,
+    image: `${userData.siteUrl}/avatar.jpg`,
     type: "website",
     ...customMeta,
   };
