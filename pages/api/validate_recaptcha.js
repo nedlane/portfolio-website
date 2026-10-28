@@ -1,3 +1,5 @@
+export const config = { api: { bodyParser: { sizeLimit: "16kb" } } };
+
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default async (req, res) => {
@@ -34,7 +36,7 @@ async function discordMessage(data) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      content: "@everyone",
+      allowed_mentions: { parse: [] },
       embeds: [
         {
           title: `New website request from ${data.name}`,
@@ -44,7 +46,7 @@ async function discordMessage(data) {
       ],
     }),
   };
-  const response = await fetch(webhookURL, sendobject);
+  const response = await fetch(webhookURL, { ...sendobject, signal: AbortSignal.timeout(5000) });
   if (!response.ok) throw new Error("Message delivery failed");
   return;
 }
@@ -55,13 +57,21 @@ async function validateToken(token) {
     "https://www.google.com/recaptcha/api/siteverify",
     {
       method: "POST",
-      body: `secret=${secretKey}&response=${token}`,
+      body: new URLSearchParams({ secret: secretKey, response: token }).toString(),
+      signal: AbortSignal.timeout(5000),
       headers: {
         "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
       },
     },
   );
+  if (!response.ok) throw new Error("Verification unavailable");
   const validity = await response.json();
+  const allowedHosts = new Set(["nedlane.com", "www.nedlane.com"]);
+  if (process.env.VERCEL_URL) allowedHosts.add(process.env.VERCEL_URL);
+  if (process.env.NODE_ENV !== "production") allowedHosts.add("localhost");
+  if (validity.action !== "form_submit" || !allowedHosts.has(validity.hostname)) {
+    return { statusCode: 401, obj: { message: "ReCAPTCHA verification failed. Please try again later." } };
+  }
   if (validity.success) {
     if (validity.score >= 0.5) {
       return {
@@ -94,7 +104,7 @@ function validateBody(input) {
   }
 
   if (
-    !input.hasOwnProperty("data") ||
+    !Object.prototype.hasOwnProperty.call(input, "data") ||
     typeof input.data !== "object" ||
     input.data === null
   ) {
@@ -127,7 +137,7 @@ function validateBody(input) {
     return false;
   }
 
-  if (!input.hasOwnProperty("token") || typeof input.token !== "string") {
+  if (!Object.prototype.hasOwnProperty.call(input, "token") || typeof input.token !== "string" || input.token.length === 0 || input.token.length > 4096) {
     return false;
   }
 
