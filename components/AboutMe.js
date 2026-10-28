@@ -10,7 +10,7 @@ export default function AboutMe() {
       </div>
       <div className="bg-[#F1F1F1] dark:bg-gray-900 -mt-16 md:-mt-24 pt-24 md:pt-36 pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-2xl md:text-4xl font-semibold leading-relaxed">
+          <p className="text-2xl md:text-4xl font-semibold" style={{ lineHeight: "3rem" }}>
             {userData.about.title}. Currently working on{" "}
             <a className="bg-purple-500 rounded-md px-2 py-1 text-white inline decoration-clone" href={userData.about.currentProjectUrl}>{userData.about.currentProject}</a>
           </p>

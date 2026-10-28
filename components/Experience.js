@@ -12,12 +12,12 @@ export default function Experience() {
           {userData.experience.map((item, index) => (
             <React.Fragment key={`${item.company}-${item.title}`}>
               <article className={`relative border p-6 shadow-xl bg-white dark:bg-gray-800 rounded-md z-10 ${item.year === "2027" ? "border-dashed border-gray-400 shadow-sm" : "border-gray-200 dark:border-gray-700"}`}>
-                <p className="absolute -top-9 md:-left-10 text-3xl font-bold text-gray-400 dark:text-gray-500">{item.year}</p>
+                <p className="absolute -top-9 left-0 md:-left-10 text-2xl md:text-4xl whitespace-nowrap font-bold text-gray-200 dark:text-gray-800">{item.year}</p>
                 <h2 className="font-semibold text-xl">{item.title}</h2>
                 <a href={item.companyLink} className="inline-block mt-1 text-gray-600 dark:text-gray-300">{item.company}</a>
                 <p className="text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">{item.desc}</p>
               </article>
-              {index < userData.experience.length - 1 && <div aria-hidden="true" className="flex flex-col items-center"><div className="w-4 h-4 bg-green-500 rounded-full" /><div className="w-1 h-24 bg-gray-200 dark:bg-gray-500" /></div>}
+              {index < userData.experience.length - 1 && <div aria-hidden="true" className="flex flex-col items-center"><div className="w-4 h-4 bg-green-500 rounded-full relative"><div className="absolute inset-0 bg-green-500 rounded-full animate-ping" /></div><div className="w-1 h-24 bg-gray-200 dark:bg-gray-500" /></div>}
             </React.Fragment>
           ))}
           <h2 className="text-3xl font-bold mt-16 mb-6">Education</h2>
