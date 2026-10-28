@@ -7,6 +7,12 @@ const userData = {
   phone: "+61 473 005 455",
   address: "Brisbane, Queensland, Australia",
   siteUrl: "https://www.nedlane.com",
+  hero: [
+    { word: "Developer", color: "#9D32A8" },
+    { word: "Hobbyist", color: "#FF8E0D" },
+    { word: "Student", color: "#009105" },
+    { word: "Musician", color: "#049EBD" },
+  ],
   skills: ["C++", "Python", "ROS 2", "CAN", "TypeScript", "Next.js", "Linux", "Git"],
   work: [
     { title: "Autonomous vehicle software", description: "I develop software used to operate UQ Racing's autonomous vehicle, including vehicle control, mission startup and communication between systems." },
@@ -16,7 +22,7 @@ const userData = {
   ],
   about: {
     title:
-      "I'm a software engineering student in Brisbane building developer tools and web applications",
+      "I'm an engineering student at UQ who builds software for vehicles and the people working on them",
     description: [
       "I study a Bachelor of Engineering (Software) and Master of Engineering (Software) at the University of Queensland, with expected graduation in July 2029. I contribute across UQ Racing's autonomous vehicle software. I work on the systems used to operate the car and the infrastructure that supports the team.",
       "I enjoy building practical tools for engineers and making complex systems easier to work with. My projects include developer tools, web applications and software that connects to vehicle hardware.",
