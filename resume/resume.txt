@@ -1,0 +1,48 @@
+NED LANE
+Brisbane, Queensland | jobs@nedlane.com | +61 473 005 455
+nedlane.com | github.com/nedlane | linkedin.com/in/nedlane
+
+PROFILE
+UQ engineering student specialising in software, seeking an ongoing part-time
+undergraduate role in robotics or software engineering in Brisbane. Available
+two days a week during semester, up to three by arrangement, with two weeks' notice.
+
+EDUCATION
+The University of Queensland | 2024 to July 2029 (expected)
+Bachelor of Engineering (Software) / Master of Engineering (Software)
+
+ENGINEERING EXPERIENCE
+UQ Racing
+Business Lead and Occupational Health and Safety (OHS) Lead | 2026
+OHS Lead | 2025
+Incoming Autonomous Vehicle Technical Director | Appointed for 2027
+
+Autonomous vehicle engineering
+- Develop ROS 2 software in C++ and Python for the autonomous vehicle, including
+  vehicle control, mission startup and CAN communication between systems.
+- Built and maintain the team's multi-WAN router software to manage Starlink, Wi-Fi and mobile
+  hotspot connections and prioritise traffic needed to operate the car.
+- Contribute to wiring harnesses, board design and electrical integration for
+  the autonomous vehicle.
+
+Team operations and safety
+- Built and maintain the team website in Next.js and TypeScript, including
+  recruitment and sponsor enquiry forms, and manage its hosting.
+- Manage team sponsorships, events and social media as Business Lead.
+- Prepare and maintain team risk assessments and write operating and safe work
+  procedures for workshop activities, autonomous vehicle testing and public demonstrations.
+
+TECHNICAL SKILLS
+Programming: Python, C++, TypeScript
+Robotics: ROS 2, CAN
+Web and infrastructure: Next.js, Linux, Git
+
+OTHER EMPLOYMENT
+Officeworks | Team Member | 2024 to present
+- Help customers choose technology products and troubleshoot enquiries.
+  Support checkout and online order fulfilment.
+
+St Joseph's College, Gregory Terrace | Ensemble Technician | 2024 to October 2026
+- Helped students learn repertoire and techniques during ensemble rehearsals,
+  including students with diverse learning needs.
+

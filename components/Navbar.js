@@ -14,21 +14,21 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
+    <div className="max-w-6xl mx-auto px-6 py-10 md:py-20">
       <div className="flex  md:flex-row justify-between items-center">
         <Link href="/" className="flex flex-row">
-          <img src="/logo_optim.svg" className="h-20 hidden md:block" />
+          <img alt="" src="/logo_optim.svg" className="h-20 hidden md:block" />
           <div className="flex flex-col justify-center">
-            <h1 className="font-semibold text-xl dark:text-gray-100">
+            <p className="font-semibold text-xl dark:text-gray-100">
               {userData.name}
-            </h1>
+            </p>
             <p className="text-base font-light text-gray-500 dark:text-gray-300">
               {userData.designation}
             </p>
           </div>
         </Link>
 
-        <div className="space-x-8 hidden md:block">
+        <div className="space-x-6 hidden lg:flex">
           <Link
             href="/about"
             className={`text-base  ${
@@ -130,10 +130,11 @@ export default function Navbar() {
               </svg>
             )}
           </Link>
+          <a href={userData.resumeUrl} className="text-base text-gray-600 dark:text-gray-300">Résumé</a>
         </div>
 
         <div className="space-x-4 flex flex-row items-center">
-          <a href={userData.socialLinks.instagram}>
+          <a href={userData.socialLinks.instagram} aria-label="Instagram">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -147,6 +148,7 @@ export default function Navbar() {
           </a>
           <a
             href={userData.socialLinks.linkedin}
+            aria-label="LinkedIn"
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
@@ -194,21 +196,14 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-      <div className="space-x-8 block md:hidden mt-4">
+      <div className="flex flex-wrap gap-x-6 gap-y-3 lg:hidden mt-6">
         <Link
           href="/about"
           className="text-base font-normal text-gray-600 dark:text-gray-300"
         >
           About
         </Link>
-        {/*}
-        <Link
-          href="/projects"
-          className="text-base font-normal text-gray-600 dark:text-gray-300"
-        >
-          Projects
-        </Link>
-        {*/}
+
         <Link
           href="/experience"
           className="text-base font-normal text-gray-600 dark:text-gray-300"
@@ -221,6 +216,8 @@ export default function Navbar() {
         >
           Contact
         </Link>
+        <a href="https://tutoring.nedlane.com/" className="text-base text-gray-600 dark:text-gray-300">Tutoring</a>
+        <a href={userData.resumeUrl} className="text-base text-gray-600 dark:text-gray-300">Résumé</a>
       </div>
     </div>
   );

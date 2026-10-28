@@ -30,29 +30,33 @@ export default function Contact() {
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
-      const token = await executeRecaptcha("form_submit");
+      try {
+        const token = await executeRecaptcha("form_submit");
 
-      const validation_result = await fetch("/api/validate_recaptcha", {
-        method: "POST",
-        body: JSON.stringify({
-          data: formData,
-          token,
-        }),
-      });
-      const valid = await validation_result.json();
-      const success =
-        validation_result.status >= 200 && validation_result.status < 300;
-      setConfirmationData({
-        open: true,
-        message: valid.message,
-        success: success,
-      });
-      if (success) {
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
+        const validation_result = await fetch("/api/validate_recaptcha", {
+          method: "POST",
+          body: JSON.stringify({
+            data: formData,
+            token,
+          }),
         });
+        const valid = await validation_result.json();
+        const success =
+          validation_result.status >= 200 && validation_result.status < 300;
+        setConfirmationData({
+          open: true,
+          message: valid.message,
+          success: success,
+        });
+        if (success) {
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+        }
+      } catch {
+        setConfirmationData({ open: true, success: false, message: "The form is unavailable. Please email me directly." });
       }
     },
     [executeRecaptcha, formData],

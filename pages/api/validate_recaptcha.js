@@ -5,18 +5,25 @@ export default async (req, res) => {
     res.status(405).send({ message: "Only POST requests allowed" });
     return;
   }
-  const body = JSON.parse(req.body);
+  let body;
+  try {
+    body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+  } catch {
+    return res.status(400).json({ message: "Invalid input. Please check your details." });
+  }
   if (!validateBody(body)) {
-    res.status(400).send({
-      message:
-        "Invalid input, please review and correct your information. (400 Bad Request)",
-    });
+    return res.status(400).json({ message: "Invalid input. Please check your details." });
   }
-  const { statusCode, obj } = await validateToken(body.token);
-  if (statusCode == 200) {
-    discordMessage(body.data);
+  if (!process.env.RECAPTCHA_SECRET_KEY || !process.env.DISCORD_WEBHOOK_URL) {
+    return res.status(503).json({ message: "The form is unavailable. Please email me directly." });
   }
-  res.status(statusCode).json(obj);
+  try {
+    const { statusCode, obj } = await validateToken(body.token);
+    if (statusCode === 200) await discordMessage(body.data);
+    return res.status(statusCode).json(obj);
+  } catch {
+    return res.status(502).json({ message: "Your message could not be delivered. Please email me directly." });
+  }
 };
 
 async function discordMessage(data) {
@@ -37,7 +44,8 @@ async function discordMessage(data) {
       ],
     }),
   };
-  await fetch(webhookURL, sendobject);
+  const response = await fetch(webhookURL, sendobject);
+  if (!response.ok) throw new Error("Message delivery failed");
   return;
 }
 
@@ -94,6 +102,8 @@ function validateBody(input) {
   }
 
   if (
+    typeof input.data.name !== "string" ||
+    typeof input.data.email !== "string" ||
     !isValidFullName(input.data.name) ||
     !isValidEmail(input.data.email) ||
     typeof input.data.message !== "string"
